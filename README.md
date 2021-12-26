@@ -11,9 +11,15 @@ Doradca ma możliwość zwrotu kuponu w przypadku gdy jednak go nie wykorzysta (
 
 W przypadku gdy doradca zgubi kupon, aplikacja pamięta ten ostatnio pobrany, a jeżeli pobierze ich więcej to administrator ma interaktywne logi, które dają możliwość łatwego przywrócenia kuponu do bazy.
 
+![image](https://user-images.githubusercontent.com/5255207/147415981-e933f4c0-e03f-4175-a72a-43027bda5abf.png)
+
+
 ## Kalkulator MNP
 
 Prosty modal mający na celu podać przybliżoną datę przeniesienia numeru, zawiera też szczególne przypadki, które należy uwzględnić przy przenoszeniu numeru.
+
+![image](https://user-images.githubusercontent.com/5255207/147416021-0586ff13-2c8d-42e9-8338-5c634b14925f.png)
+
 
 ## Terminale
 
@@ -22,9 +28,13 @@ Wyszukiwarka urządzeń w aplikacji z sieci korporacyjnej działa jak krew z nos
 - W ogóle panel wyszukiwania, standardowo dostęp do niego mają wyłącznie konsultanci, a klienci muszą filtrować
 - Stan magazynowy
 
+![image](https://user-images.githubusercontent.com/5255207/147416045-453f75ab-86c0-4fee-9d1e-eacc26f6e555.png)
+
+
 ## Kody pocztowe 
 
 Klienci często mają nieaktualne dane w systemach, a sami nie znają prawidłowego kodu pocztowego. Omnio pozwala wyszukać te kody pocztowe, które przepuści system korporacyjny.
+
 ### Weryfikacja FIX
 Możliwość sprawdzenia możliwości technicznych na Internet pod wskazanym adresem.
 
@@ -38,6 +48,11 @@ Dokładnie ten sam panel co w pierwszej zakładce.
 Hurtowe dodawanie kuponów. Należy wybrać typ kuponu, po czym wkleić listę kuponów oddzielonych spacją lub znakiem nowej linii.
 ### Pozostałe funkcje
 Wyświetlanie i usuwanie(WIP) kuponów z bazy.
+
+## Interaktywne logi
+Każda interakcja z bazą danych jest wysyłana na kanał Telegram:
+
+![image](https://user-images.githubusercontent.com/5255207/147415911-a9758b42-3795-48ee-917a-2bf31b938005.png)
 
 # Instalacja
 
