@@ -1,0 +1,16 @@
+{
+    "name": "Omnio - kupony rabatowe",
+    "short_name": "Omnio",
+    "start_url": "index.php",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "omnio.png",
+            "type": "image/png",
+            "sizes": "400x400"
+        }
+    ]
+}

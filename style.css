@@ -1,0 +1,42 @@
+.biere {
+  width: 100%;
+  text-align: center;
+}
+
+pre {
+  font-size: x-large;
+}
+
+.table {
+  border: 1px solid black;
+}
+
+.custom-switch .custom-control-label::before {
+  border-color: gray;
+}
+
+.badge-light {
+  color: #000;
+  background-color: #ccc;
+}
+
+/* #getCouponsButton{
+  width: 100%;
+}
+
+#addCouponsButton{
+  width: 100%;
+}
+
+#addMOTDbutton{
+  width: 100%;
+} */
+
+#darkSwitchLabel{
+  color: black;
+  padding-top: 10px;
+}
+
+.btn-block{
+  width: 100%;
+}

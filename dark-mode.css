@@ -1,0 +1,95 @@
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] pre {
+  color: white;
+}
+
+[data-theme="dark"] .text-muted {
+  background-color: #111;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #333 !important;
+}
+
+[data-theme="dark"] .text-primary {
+  color: rgb(255, 136, 35) !important;
+  background-color: #111;
+}
+
+.custom-control-input:disabled:checked ~ .custom-control-label::before,
+.custom-control-input[disabled]:checked ~ .custom-control-label::before {
+  background-color: rgb(255, 136, 35);
+}
+
+[data-theme="dark"] .modal-content {
+  color: #eee !important;
+  background-color: #111 !important;
+}
+
+[data-theme="dark"] .btn-secondary {
+  color: #eee !important;
+  background-color: #111 !important;
+  border-color: #eee;
+}
+
+[data-theme="dark"] .close {
+  filter: invert(1);
+}
+
+[data-theme="dark"] .card-icon {
+  background-color: #111;
+}
+
+[data-theme="dark"] .card {
+  background-color: #111;
+}
+
+.custom-control {
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .custom-switch .custom-control-label::before {
+  border-color: #eee;
+}
+
+[data-theme="dark"] .card-body {
+  color: #eee !important;
+  background-color: #111 !important;
+}
+
+[data-theme="dark"] .card-img-top {
+  color: #eee !important;
+  background-color: #111 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #eee !important;
+}
+
+[data-theme="dark"] .table {
+  background-color: #111 !important;
+  --bs-table-bg: #111;
+  color: #eee;
+  border: #eee solid 1px;
+}
+
+[data-theme="dark"] .input-group-text {
+  color: #eee !important;
+  background-color: #111 !important;
+}
+
+[data-theme="dark"] #darkSwitchLabel {
+  color: white;
+}
+
+[data-theme="dark"] .btn-close::before {
+  background-color: #eee;
+}
