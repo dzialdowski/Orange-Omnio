@@ -1,6 +1,6 @@
 <?php
 //error_reporting(0);
-require("config.php");
+require("../config.php");
 $codeType = $_GET['codeType'];
 $codeValues = json_decode(urldecode($_GET['codeValue']), true);
 

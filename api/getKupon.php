@@ -16,7 +16,7 @@ if ($stmt->execute(array($kupon))) {
     $kod = $rows[0]["coupon"];
     $kuponID = $rows[0]['couponID'];
     echo json_encode(array("success" => $rows));
-    $url= $endpoint."returnToDatabase.php?codeID=".$kuponID;
+    $url= $endpoint."api/returnToDatabase.php?codeID=".$kuponID;
     $keyboard = json_encode([
         "inline_keyboard" => [
             [

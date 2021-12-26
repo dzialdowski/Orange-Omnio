@@ -3,7 +3,7 @@ $(document).ready(function () {
   let noCoupon = new boosted.Modal(document.getElementById("noCoupon"));
   function getMOTD() {
     let response = $.ajax({
-      url: "motd.php?requestType=GET",
+      url: "api/motd.php?requestType=GET",
       dataType: "json",
       async: false,
     });
@@ -49,7 +49,7 @@ $(document).ready(function () {
     }
   }
   var typy = $.ajax({
-    url: "typy.php",
+    url: "api/typy.php",
     dataType: "json",
     async: false,
   });
@@ -84,7 +84,7 @@ $(document).ready(function () {
   $("#zwrot-button").click(function () {
     var kupon = $("#couponCodeToReturn").val();
     var response = $.ajax({
-      url: `returnToDatabase.php?codeVal=${kupon}&username=${localStorage.getItem(
+      url: `api/returnToDatabase.php?codeVal=${kupon}&username=${localStorage.getItem(
         "username"
       )}`,
       dataType: "json",
@@ -104,7 +104,7 @@ $(document).ready(function () {
     clearInterval(odliczanko);
     odliczanie();
     var response = $.ajax({
-      url: "ajax.php",
+      url: "api/ajax.php",
       dataType: "json",
       async: false,
     });
@@ -143,7 +143,7 @@ $(document).ready(function () {
     $(".biere").click(function () {
       var kupon = this.title;
       var response = $.ajax({
-        url: `getKupon.php?kuponType=${kupon}&username=${localStorage.getItem(
+        url: `api/getKupon.php?kuponType=${kupon}&username=${localStorage.getItem(
           "username"
         )}`,
         dataType: "json",

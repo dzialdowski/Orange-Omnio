@@ -1,5 +1,5 @@
 <?php
-require("config.php");
+require("../config.php");
 $botKey = substr($botKey,3);
 define('BOT_TOKEN', $botKey); // place bot token of your bot here
 function checkTelegramAuthorization($auth_data) {

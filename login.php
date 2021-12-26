@@ -219,7 +219,7 @@ $tg_user = getTelegramUserData();
       $(document).ready(function() {
         function getMOTD() {
           let response = $.ajax({
-            url: "motd.php?requestType=GET",
+            url: "api/motd.php?requestType=GET",
             dataType: 'json',
             async: false
           });
@@ -233,13 +233,13 @@ $tg_user = getTelegramUserData();
           document.getElementById("couponsArea").value = "";
           // coupons.forEach(kupon => {
           //   var typy = $.ajax({ 
-          //     url: "addCoupon.php?codeType="+couponType+"&codeValue="+kupon,
+          //     url: "api/addCoupon.php?codeType="+couponType+"&codeValue="+kupon,
           //     dataType: 'json',
           //     async: false
           //   })
           // });
           var typy = $.ajax({
-            url: "addCoupon.php?codeType=" + couponType + "&codeValue=" + encodeURIComponent(JSON.stringify(coupons)),
+            url: "api/addCoupon.php?codeType=" + couponType + "&codeValue=" + encodeURIComponent(JSON.stringify(coupons)),
             dataType: 'json',
             async: false
           })
@@ -247,7 +247,7 @@ $tg_user = getTelegramUserData();
         }
 
         var typy = $.ajax({
-          url: "typy.php",
+          url: "api/typy.php",
           dataType: 'json',
           async: false
         });
@@ -264,7 +264,7 @@ $tg_user = getTelegramUserData();
 
         function setMOTD(motd) {
           var response = $.ajax({
-            url: "motd.php?requestType=SET&motd=" + encodeURI(JSON.stringify(motd)),
+            url: "api/motd.php?requestType=SET&motd=" + encodeURI(JSON.stringify(motd)),
             dataType: 'json',
             async: false
           });
@@ -319,7 +319,7 @@ $tg_user = getTelegramUserData();
           let couponType = document.getElementById("couponTypesList").value;
           let showAlsoUsed = document.getElementById("showAlsoUsed").checked;
           var kupony = $.ajax({
-            url: "showCoupons.php?codeType=" + couponType + "&showAlsoUsed=" + showAlsoUsed,
+            url: "api/showCoupons.php?codeType=" + couponType + "&showAlsoUsed=" + showAlsoUsed,
             dataType: 'json',
             async: false
           })

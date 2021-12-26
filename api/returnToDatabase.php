@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-require("config.php");
+require("../config.php");
 $codeID = $_GET['codeID'];
 $codeVal = $_GET['codeVal'];
 $username = $_GET['username'];

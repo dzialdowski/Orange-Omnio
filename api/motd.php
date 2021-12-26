@@ -1,5 +1,4 @@
 <?php
-require("config.php");
 $requestType = $_GET['requestType'];
 
 if ($requestType == "SET") {

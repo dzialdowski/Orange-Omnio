@@ -7,7 +7,7 @@ $(document).ready(function () {
   $("#getCityButton").click(function () {
     let city = document.getElementById("cityInput").value;
     var response = $.ajax({
-      url: `kody.php?type=city&city=${city}`,
+      url: `api/kody.php?type=city&city=${city}`,
       dataType: "json",
       async: false,
     });
@@ -39,7 +39,7 @@ $(document).ready(function () {
     if (!cityID) return;
     let street = document.getElementById("streetInput").value;
     var response = $.ajax({
-      url: `kody.php?type=street&city_id=${cityID}&street=${street}`,
+      url: `api/kody.php?type=street&city_id=${cityID}&street=${street}`,
       dataType: "json",
       async: false,
     });
@@ -71,7 +71,7 @@ $(document).ready(function () {
     let streetNumber = document.getElementById("numberInput").value;
     var response = $.ajax({
       url: `
-        kody.php?type=zipCode&city_id=${cityID}&street_id=${streetID}&street_number=${streetNumber}`,
+        api/kody.php?type=zipCode&city_id=${cityID}&street_id=${streetID}&street_number=${streetNumber}`,
       dataType: "json",
       async: false,
     });
@@ -99,7 +99,7 @@ $(document).ready(function () {
     let lokalNumber = document.getElementById("lokalInput").value;
     var response = $.ajax({
       url: `
-        kody.php?type=offers&city_name=${cityName}&street_name=${streetName}&street_number=${streetNumber}&appartment_number=${lokalNumber}&street_id=${streetID}&city_id=${cityID}`,
+        api/kody.php?type=offers&city_name=${cityName}&street_name=${streetName}&street_number=${streetNumber}&appartment_number=${lokalNumber}&street_id=${streetID}&city_id=${cityID}`,
       dataType: "json",
       async: false,
     });
