@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<header role="banner">
+  <header role="banner">
     <nav role="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" style="font-size: xx-large;" href="#">Omni<c style="background-color: black;" class="text-primary">o</c></a>
@@ -188,24 +188,22 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
-                <span class="sr-only">Close popin demo</span>
-              </button>
+              <h3 id="myModalLabel2" class="card-title">Twoje zapytanie zawiera mało filtrów!</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"><span class="visually-hidden">Close</span></button>
+
             </div>
             <div class="modal-body">
-              <div class="card">
-                <div class="card-icon">
-                  <span class="svg-warning-circle"></span>
-                </div>
-                <div class="card-body">
-                  <h3 id="myModalLabel2" class="card-title">Twoje zapytanie zawiera mało filtrów!</h3>
-                  <div class="card-text">Zamierzasz zabić OMNI i/lub swoją przeglądarkę ponad setką (a dokładnie <a id=requestCount></a>) zapytań o dostępność sprzętu w salonach. Oczekiwanie na odpowiedź może chwilę potrwać. Kontynuować?</div>
+              <div class="d-flex">
+                <div class="flex-grow-1">
+                  <div class="card-body">
+                    <div class="card-text">Zamierzasz zabić OMNI i/lub swoją przeglądarkę ponad setką (a dokładnie <a id=requestCount></a>) zapytań o dostępność sprzętu w salonach. Oczekiwanie na odpowiedź może chwilę potrwać. Kontynuować?</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Wolę nie</button>
-              <button type="button" onclick="getTerminals()" id="acceptWarning" class="btn btn-primary">Jeszcze jak!</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Wolę nie</button>
+                <button type="button" onclick="getTerminals()" id="acceptWarning" class="btn btn-primary">Jeszcze jak!</button>
+              </div>
             </div>
           </div>
         </div>
@@ -224,7 +222,7 @@
   <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.2.0/dist/focus-visible.min.js" integrity="sha384-xRa5B8rCDfdg0npZcxAh+RXswrbFk3g6dlHVeABeluN8EIwdyljz/LqJgc2R3KNA" crossorigin="anonymous"></script>
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script src="scriptTerminals.js?ver=4"></script>
-  
+
   <?php require("mnpmodal.php"); ?>
 
 </body>
