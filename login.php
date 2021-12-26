@@ -238,7 +238,7 @@ $tg_user = getTelegramUserData();
           //     async: false
           //   })
           // });
-          var typy = $.ajax({
+          var couponTypes = $.ajax({
             url: "api/addCoupon.php?codeType=" + couponType + "&codeValue=" + encodeURIComponent(JSON.stringify(coupons)),
             dataType: 'json',
             async: false
@@ -246,13 +246,13 @@ $tg_user = getTelegramUserData();
 
         }
 
-        var typy = $.ajax({
-          url: "api/typy.php",
+        var couponTypes = $.ajax({
+          url: "api/getCouponTypes.php",
           dataType: 'json',
           async: false
         });
         document.getElementById("typy").innerHTML = '';
-        json1 = JSON.parse(typy.responseText);
+        json1 = JSON.parse(couponTypes.responseText);
         var html1 = "";
         json1["success"].forEach(row => {
           html1 += "<option value=" + row["CouponType"] + ">" + row["CouponType"] + "</option>";

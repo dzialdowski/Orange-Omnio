@@ -48,13 +48,13 @@ $(document).ready(function () {
       localStorage.setItem("username", username);
     }
   }
-  var typy = $.ajax({
-    url: "api/typy.php",
+  var couponTypes = $.ajax({
+    url: "api/getCouponTypes.php",
     dataType: "json",
     async: false,
   });
   document.getElementById("typy").innerHTML = "";
-  json1 = JSON.parse(typy.responseText);
+  json1 = JSON.parse(couponTypes.responseText);
   var html1 = `<table class='table'>
       <thead>
         <tr>
@@ -143,7 +143,7 @@ $(document).ready(function () {
     $(".biere").click(function () {
       var kupon = this.title;
       var response = $.ajax({
-        url: `api/getKupon.php?kuponType=${kupon}&username=${localStorage.getItem(
+        url: `api/getCoupon.php?kuponType=${kupon}&username=${localStorage.getItem(
           "username"
         )}`,
         dataType: "json",
