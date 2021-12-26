@@ -104,7 +104,7 @@ $(document).ready(function () {
     clearInterval(odliczanko);
     odliczanie();
     var response = $.ajax({
-      url: "api/ajax.php",
+      url: "api/getCouponsCount.php",
       dataType: "json",
       async: false,
     });

@@ -16,7 +16,7 @@ $(document).ready(function () {
     onlyAvailable = document.getElementById("onlyAvailable").checked;
     checkPickup = document.getElementById("checkPickup").checked;
     var response = $.ajax({
-      url: `api/post.php?producer="${terminal.producer}"&offer="${terminal.offerType}"&search="${terminal.search}"&category="${terminal.category}"&piecgie=${terminal.piecgie}"&esim="${terminal.esim}&lojalka=24&outlet=${terminal.outlet}&priceFilter=${terminal.priceFilter}&priceFrom=${terminal.priceFrom}&priceTo=${terminal.priceTo}&onlyAvailable=${terminal.onlyAvailable}&preorder=${terminal.preorder}`,
+      url: `api/getTerminals.php?producer="${terminal.producer}"&offer="${terminal.offerType}"&search="${terminal.search}"&category="${terminal.category}"&piecgie=${terminal.piecgie}"&esim="${terminal.esim}&lojalka=24&outlet=${terminal.outlet}&priceFilter=${terminal.priceFilter}&priceFrom=${terminal.priceFrom}&priceTo=${terminal.priceTo}&onlyAvailable=${terminal.onlyAvailable}&preorder=${terminal.preorder}`,
       dataType: "json",
       async: false,
     });

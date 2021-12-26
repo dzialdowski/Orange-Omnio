@@ -81,7 +81,7 @@
                         </div>
                         <br>
                         <div class="collapse alert alert-info" id="showMNPinfo" role="alert">
-                            <span class="alert-icon"><span class="sr-only">Info</span></span>
+                            <span class="alert-icon"></span>
                             <p id="MNPdate">Przeniesiemy klienta dnia: </p>
                         </div>
                     </div>
