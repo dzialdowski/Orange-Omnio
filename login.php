@@ -49,7 +49,7 @@ $tg_user = getTelegramUserData();
           <?php
                                                                                                                                               echo " " . $first_name . "!</mark>";
                                                                                                                                             } else { //User needs to log in
-          ?><script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="<?php echo $botUsername;?>" data-size="large" data-userpic="false" data-radius="0" data-auth-url="<?php echo $endpoint; ?>check_authorization.php" data-request-access="write"></script> <?php
+          ?><script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="<?php echo $botUsername;?>" data-size="large" data-userpic="false" data-radius="0" data-auth-url="<?php echo $endpoint; ?>api/check_authorization.php" data-request-access="write"></script> <?php
                                                                                                                                                                                                                                                                                               } ?></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsing-navbar" aria-controls="collapsing-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
