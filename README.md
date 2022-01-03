@@ -2,6 +2,8 @@
 
 Aplikacja służy do pomocy doradcom biznesowym Orange w paru kwestiach podzielonych na panele.
 
+Z aplikacji korzystało około 40 osób, a sama aplikacja zastąpiła "analogowe" wydawanie kuponów przez menedżera na czacie na prośbę doradcy.
+
 Napisane z wykorzystaniem [Orange Boosted](https://boosted.orange.com/) - forka Bootstrapa 
 
 ## Kupony rabatowe
