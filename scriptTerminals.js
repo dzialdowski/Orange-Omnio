@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let modalPickup = new boosted.Modal(document.getElementById("myModal"));
+  json = ""
   function getTerminal() {
     let terminal = new Array();
     terminal.producer = document.getElementById("Producer").value;
@@ -148,7 +149,7 @@ $(document).ready(function () {
      */
 
       /** @type {Terminals} */
-      const json = JSON.parse(response.responseText);
+      json = JSON.parse(response.responseText);
       if (document.getElementById("checkPickup").checked) {
         if (json.data.length > 100) {
           document.getElementById("requestCount").innerHTML = json.data.length;

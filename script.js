@@ -9,10 +9,10 @@ $(document).ready(function () {
     });
     if (response.responseText == "") return 0;
     let MOTD = JSON.parse(response.responseText);
-    setMOTDonDOM(MOTD);
+    setMOTD_onDOM(MOTD);
   }
   getMOTD();
-  function setMOTDonDOM(MOTD) {
+  function setMOTD_onDOM(MOTD) {
     if (MOTD.additionalContentCheck) {
       document.getElementById(
         "MOTD_content"
@@ -33,7 +33,7 @@ $(document).ready(function () {
     }
   }
 
-  var odliczanko;
+  var countdownVar;
   if (localStorage.getItem("username") == null) {
     var username = prompt("Podaj swój login z intranetu:", "imie.nazwisko");
     if (
@@ -101,8 +101,8 @@ $(document).ready(function () {
 
   function getCoupons() {
     document.getElementById("refreshCountdown").innerHTML = 9;
-    clearInterval(odliczanko);
-    odliczanie();
+    clearInterval(countdownVar);
+    countdown();
     var response = $.ajax({
       url: "api/getCouponsCount.php",
       dataType: "json",
@@ -177,12 +177,12 @@ $(document).ready(function () {
     getCoupons();
   });
 
-  function odliczanie() {
+  function countdown() {
     //odliczanko
     var timeleft = 9;
-    odliczanko = setInterval(function () {
+    countdownVar = setInterval(function () {
       if (timeleft <= 0) {
-        clearInterval(odliczanko);
+        clearInterval(countdownVar);
         getCoupons();
       }
       document.getElementById("refreshCountdown").innerHTML = timeleft;
