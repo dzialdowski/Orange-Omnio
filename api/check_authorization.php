@@ -31,4 +31,4 @@ try {
 } catch (Exception $e) {
   die ($e->getMessage());
 }
-header('Location: login.php');
+header('Location: ../login.php');
