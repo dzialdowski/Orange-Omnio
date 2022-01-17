@@ -2,7 +2,7 @@ $(document).ready(function () {
   let modalPickup = new boosted.Modal(document.getElementById("myModal"));
   json = ""
   function getTerminal() {
-    let terminal = new Array();
+    let terminal = {};
     terminal.producer = document.getElementById("Producer").value;
     terminal.offerType = document.getElementById("offerType").value;
     terminal.category = document.getElementById("category").value;
@@ -14,11 +14,13 @@ $(document).ready(function () {
     terminal.priceFilter = document.getElementById("priceFilter").checked;
     terminal.priceFrom = document.getElementById("priceFrom").value;
     terminal.priceTo = document.getElementById("priceTo").value;
-
-    onlyAvailable = document.getElementById("onlyAvailable").checked;
-    checkPickup = document.getElementById("checkPickup").checked;
+    terminal.loyalty = 24
+    terminal.onlyAvailable = document.getElementById("onlyAvailable").checked;
+    terminal.checkPickup = document.getElementById("checkPickup").checked;
+    data = JSON.stringify(terminal)
+    dataURL = encodeURIComponent(data)
     var response = $.ajax({
-      url: `api/getTerminals.php?producer="${terminal.producer}"&offer="${terminal.offerType}"&search="${terminal.search}"&category="${terminal.category}"&piecgie=${terminal.piecgie}"&esim="${terminal.esim}&lojalka=24&outlet=${terminal.outlet}&priceFilter=${terminal.priceFilter}&priceFrom=${terminal.priceFrom}&priceTo=${terminal.priceTo}&onlyAvailable=${terminal.onlyAvailable}&preorder=${terminal.preorder}`,
+      url: `api/getTerminals.php?data=${dataURL}`,
       dataType: "json",
       async: false,
     });
@@ -150,12 +152,12 @@ $(document).ready(function () {
 
       /** @type {Terminals} */
       json = JSON.parse(response.responseText);
-      if (document.getElementById("checkPickup").checked) {
+      if (terminal.checkPickup) {
         if (json.data.length > 100) {
           document.getElementById("requestCount").innerHTML = json.data.length;
           modalPickup.show();
-        } else getTerminals();
-      } else getTerminals();
+        } else getTerminals(terminal.checkPickup);
+      } else getTerminals(terminal.checkPickup);
     }
   }
 
@@ -169,7 +171,7 @@ $(document).ready(function () {
     getTerminal();
   });
 
-  function getTerminals() {
+  function getTerminals(checkPickup) {
     document.getElementById("dzejson").innerHTML += device(
       json.data,
       checkPickup

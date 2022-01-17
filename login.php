@@ -1,4 +1,5 @@
 <?php
+error_log(0);
 require("config.php");
 $nazwa = "";
 define('BOT_USERNAME', $botUsername); // place username of your bot here

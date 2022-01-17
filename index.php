@@ -1,4 +1,5 @@
 <?php
+error_log(0);
 require("config.php");
 $nazwa = "";
 define('BOT_USERNAME', $botUsername); // place username of your bot here
@@ -50,7 +51,7 @@ $tg_user = getTelegramUserData();
                         <li class="nav-item"><a class="nav-link" href="#" id="showMNPbutton">Kalkulator MNP</a></li>
                         <li class="nav-item"><a class="nav-link" href="terminale.php">Terminale</a></li>
                         <li class="nav-item"><a class="nav-link" href="kodypocztowe.php">Kody pocztowe</a></li>
-                        <?php if (in_array($tg_user['id'], $adminArray) || $_SERVER['REMOTE_ADDR'] == '192.168.1.10') { ?>
+                        <?php if (($tg_user && in_array($tg_user['id'], $adminArray)) || $_SERVER['REMOTE_ADDR'] == '192.168.1.10') { ?>
                             <li class="nav-item"><a class="nav-link" href="login.php">Admin panel</a></li>
                         <?php } ?>
                         <li class="nav-item">
