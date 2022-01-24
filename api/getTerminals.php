@@ -50,6 +50,8 @@ class DeviceInOfferPriceFilter
     public $to; //int
     public $from; //int
 }
+
+
 class SearchPayload
 {
     public $category; //String
@@ -84,95 +86,128 @@ class SearchPayload
         $this->showAvailable = false;
         $this->showAll = true;
         $this->attrNumberFilter = new attrNumberFilter();
-        $this->searchValue="";
+        $this->searchValue = "";
+        $this->process = "ACTIVATION";
+    }
+
+    public function setSortModeRecommendedDesc(){
+        $this->sortMode = "recommendedDesc";
+    }
+    public function setSortModeDateDesc(){
+        $this->sortMode = "dateDesc";
+    }
+    public function setSortModeDateAsc(){
+        $this->sortMode = "dateAsc";
+    }
+    public function setSortModeNameAsc(){
+        $this->sortMode = "nameAsc";
+    }
+    public function setSortModeNameDesc(){
+        $this->sortMode = "nameDesc";
+    }
+    public function setSortModePriceInOfferAsc(){
+        $this->sortMode = "priceInOfferAsc";
+    }
+    public function setSortModePriceInOfferDesc(){
+        $this->sortMode = "priceInOfferDesc";
+    }
+
+    public function setFromInputData($terminal)
+    {
+        $this->category = $terminal->category;
+        $this->producer = $terminal->producer;
+        $this->searchValue = $terminal->search;
+        $this->propositionItemId = $terminal->offerType;
+
+        if ($terminal->piecgie) {
+            $this->attrStickerFilter->setPolecanyDo5G();
+        }
+        if ($terminal->esim) {
+            $this->attrStickerFilter->seteSIM();
+        }
+        if ($terminal->outlet) {
+            $this->attrStickerFilter->setOutlet();
+        }
+        if ($terminal->preorder) {
+            $this->attrStickerFilter->setPreorder();
+        }
+
+        if ($terminal->priceFilter && $terminal->offerType != '"DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS"') { // to be checked
+            $this->oneTimePriceInOfferFilters['to'] = $terminal->priceTo;
+            $this->oneTimePriceInOfferFilters['from'] = $terminal->priceFrom;
+        } else if ($terminal->priceFilter && $terminal->offerType == '"DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS"') {
+            $this->priceFilter->to = $terminal->priceFilter->to;
+            $this->priceFilter->from = $terminal->priceFilter->from;
+        }
+        if ($terminal->onlyAvailable) {
+            $this->showAvailable = $terminal->onlyAvailable;
+        }
+        if ($terminal->offerType == '"TANTO_B2B_249410$MOB_CPO_7050_5722_AC_249410"') {
+            $this->process = 'INSTALMENT_SALES_OF_GOODS_NC';
+        }
+
+        if ($terminal->offerType == '"DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS"') {
+            $this->process = 'SALE_OF_GOODS';
+        }
+
+        if (
+            $terminal->offerType == '"Orange_Oferta_dla_Firm_251056$MOB_CPO_7318_5726_AC_251056"'
+            || $terminal->offerType == '"Orange_Oferta_dla_Firm_251057$MOB_CPO_7318_5726_AC_251057"'
+            || $terminal->offerType == '"Orange_Oferta_dla_Firm_251058$MOB_CPO_7318_5726_AC_251058"'
+            || $terminal->offerType == '"Orange_Oferta_dla_Firm_251059$MOB_CPO_7318_5726_AC_251059"'
+        ) {
+            $this->process = 'MNP';
+        }
     }
 }
+
+class ApiCredentials
+{
+    public $cookies;
+    public $token;
+
+    public function __construct()
+    {
+        $this->cookies = array();
+    }
+
+    function getCredentialsFromRemote()
+    { 
+        $this->token = fopen("https://www.orange.pl/hapi/pwa/v1/offerSelector/getToken", 'r');
+        $this->token = fgets($this->token);
+        foreach ($http_response_header as $hdr) {
+            if (preg_match('/^Set-Cookie:\s*([^;]+)/', $hdr, $matches)) {
+                parse_str($matches[1], $tmp);
+                $this->cookies += $tmp;
+            }
+        }
+        $this->token = str_replace('"', "", $this->token);
+    }
+}
+
 
 $searchPayload = new SearchPayload();
 
 $terminal = json_decode($_GET['data']);
-$producer = $terminal->producer;
-$search = $terminal->search;
-$category = $terminal->category;
-if ($terminal->piecgie) {
-    $searchPayload->attrStickerFilter->setPolecanyDo5G();
-}
-if ($terminal->esim) {
-    $searchPayload->attrStickerFilter->seteSIM();
-}
-if ($terminal->outlet) {
-    $searchPayload->attrStickerFilter->setOutlet();
-}
-if ($terminal->preorder) {
-    $searchPayload->attrStickerFilter->setPreorder();
-}
-$searchPayload->process = "ACTIVATION";
 
-$searchPayload->propositionItemId=$terminal->offerType;
+$searchPayload->setFromInputData($terminal);
 
-if ($terminal->priceFilter && $terminal->offerType != '"DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS"') {
-    $searchPayload->oneTimePriceInOfferFilters['to'] = $terminal->priceTo;
-    $searchPayload->oneTimePriceInOfferFilters['from'] = $terminal->priceFrom;
-} else if ($terminal->priceFilter && $terminal->offerType == '"DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS"') {
-    $searchPayload->priceFilter->to = $terminal->priceFilter->to;
-    $searchPayload->priceFilter->from = $terminal->priceFilter->from;
-}
-if ($terminal->onlyAvailable) {
-    $searchPayload->onlyAvailable = $terminal->onlyAvailable;
-}
-if ($terminal->offerType == '"TANTO_B2B_249410$MOB_CPO_7050_5722_AC_249410"') {
-    $searchPayload->process = 'INSTALMENT_SALES_OF_GOODS_NC';
-}
+$searchPayload->setSortModeDateDesc();
 
-if ($terminal->offerType == '"DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS"') {
-    $searchPayload->process = 'SALE_OF_GOODS';
-}
-
-if ($terminal->offerType == '"Orange_Oferta_dla_Firm_251056$MOB_CPO_7318_5726_AC_251056"' || $terminal->offerType == '"Orange_Oferta_dla_Firm_251057$MOB_CPO_7318_5726_AC_251057"' || $terminal->offerType == '"Orange_Oferta_dla_Firm_251058$MOB_CPO_7318_5726_AC_251058"' || $terminal->offerType == '"Orange_Oferta_dla_Firm_251059$MOB_CPO_7318_5726_AC_251059"') {
-    $searchPayload->process = 'MNP';
-}
-
-$searchPayload->category = $terminal->category;
-$searchPayload->producer = $terminal->producer;
-$searchPayload->searchValue = $terminal->search;
-
-
-
-
-
-$token = fopen("https://www.orange.pl/hapi/pwa/v1/offerSelector/getToken", 'r');
-$token = fgets($token);
-$cookies = array();
-foreach ($http_response_header as $hdr) {
-    if (preg_match('/^Set-Cookie:\s*([^;]+)/', $hdr, $matches)) {
-        parse_str($matches[1], $tmp);
-        $cookies += $tmp;
-    }
-}
-$token = str_replace('"', "", $token);
-
+$apiCredentials = new ApiCredentials();
+$apiCredentials->getCredentialsFromRemote();
 
 $opts = array(
     'http' => array(
         'method' => "POST",
-        'header' =>
-            "Accept-language: pl\r\n" .
+        'header' => "Accept-language: pl\r\n" .
             "Content-type: application/json; charset=UTF-8\r\n" .
-            "CSRFToken: " . $token."\r\n".
-            "Cookie: ". http_build_query($cookies,'','; '). "\r\n",
+            "CSRFToken: " . $apiCredentials->token . "\r\n" .
+            "Cookie: " . http_build_query($apiCredentials->cookies, '', '; ') . "\r\n",
         'content' => json_encode($searchPayload)
     )
 );
-//var_dump($opts);
 $context = stream_context_create($opts);
 $fp = fopen('https://www.orange.pl/hapi/sklep/getFiltered', 'r', false, $context);
 
 echo stream_get_contents($fp);
-
-function curlResponseHeaderCallback($tokenc, $headerLine)
-{
-    global $cookies;
-    if (preg_match('/^Set-Cookie:\s*([^;]*)/mi', $headerLine, $cookie) == 1)
-        $cookies[] = $cookie;
-    return strlen($headerLine); // Needed by curl
-}
