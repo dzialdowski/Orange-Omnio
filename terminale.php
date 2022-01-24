@@ -66,6 +66,10 @@
             <option value="Int_dla_Firm_Biurowy_Haiti_257493$MOB_CPO_7926_5745_AC_257493">Internet Biurowy 5G Prymium</option>
             <option value="TANTO_B2B_249410$MOB_CPO_7050_5722_AC_249410">SIMFREE</option>
             <option value="DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS">SIMFREE - BEZ RAT (AKCESORIA)</option>
+            <option value="Abonament_komorkowy_257214$MOB_CPO_7731_5733_AC_257214">PLAN 40 B2C</option>
+            <option value="Abonament_komorkowy_257215$MOB_CPO_7731_5733_AC_257215">PLAN 50 B2C</option>
+            <option value="Abonament_komorkowy_257216$MOB_CPO_7731_5733_AC_257216">PLAN 60 B2C</option>
+            <option value="Abonament_komorkowy_257217$MOB_CPO_7731_5733_AC_257217">PLAN 80 B2C</option>
           </select>
           <label for="Producer">Producent</label>
           <select onchange="" class="form-control" id="Producer">
