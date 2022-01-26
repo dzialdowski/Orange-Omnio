@@ -105,6 +105,16 @@
             <option value="Winner-Group">WINNER-GROUP</option>
             <option value="Xiaomi">XIAOMI</option>
           </select>
+          <label for="sortMode">Sortowanie</label>
+          <select class="form-control" name="" id="sortMode">
+            <option selected value="recommendedDesc">Polecane</option>
+            <option value="dateDesc">Najnowsze</option>
+            <option value="dateAsc">Najstarsze</option>
+            <option value="nameAsc">Nazwa A-Z</option>
+            <option value="nameDesc">Nazwa Z-A</option>
+            <option value="priceInOfferAsc">Cena rosnąco</option>
+            <option value="priceInOfferDesc">Cena malejąco</option>
+          </select>
           <label for="search">Wyszukaj</label>
           <input class="form-control" autocomplete="off" type="text" placeholder="Wpisz nazwę terminala, albo zostaw puste" id=search>
           <button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#stickers" aria-expanded="false" aria-controls="stickers">Dodatkowe opcje</button></br>
