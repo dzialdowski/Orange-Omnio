@@ -14,6 +14,7 @@ $(document).ready(function () {
     terminal.priceFilter = document.getElementById("priceFilter").checked;
     terminal.priceFrom = document.getElementById("priceFrom").value;
     terminal.priceTo = document.getElementById("priceTo").value;
+    terminal.sortMode = document.getElementById("sortMode").value;
     terminal.loyalty = 24
     terminal.onlyAvailable = document.getElementById("onlyAvailable").checked;
     terminal.checkPickup = document.getElementById("checkPickup").checked;

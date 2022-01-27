@@ -118,6 +118,7 @@ class SearchPayload
         $this->producer = $terminal->producer;
         $this->searchValue = $terminal->search;
         $this->propositionItemId = $terminal->offerType;
+        $this->sortMode = $terminal->sortMode;
 
         if ($terminal->piecgie) {
             $this->attrStickerFilter->setPolecanyDo5G();
@@ -192,7 +193,6 @@ $terminal = json_decode($_GET['data']);
 
 $searchPayload->setFromInputData($terminal);
 
-$searchPayload->setSortModeDateDesc();
 
 $apiCredentials = new ApiCredentials();
 $apiCredentials->getCredentialsFromRemote();
