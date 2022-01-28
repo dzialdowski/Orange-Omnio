@@ -46,30 +46,37 @@
         <div class="form-group">
           <label for="offerType">Typ oferty</label>
           <select class="form-control" name="" id="offerType">
-            <option value="Orange_Oferta_dla_Firm_249810$MOB_CPO_7291_5726_AC_249810">S VOICE B2B 24msc</option>
-            <option value="Orange_Oferta_dla_Firm_249813$MOB_CPO_7291_5726_AC_249813">M VOICE B2B 24msc</option>
-            <option value="Orange_Oferta_dla_Firm_249816$MOB_CPO_7291_5726_AC_249816">L VOICE B2B 24msc</option>
-            <option value="Orange_Oferta_dla_Firm_249819$MOB_CPO_7291_5726_AC_249819">XL VOICE B2B 24msc</option>
-            <option value="Orange_Oferta_dla_Firm_251056$MOB_CPO_7318_5726_AC_251056">S VOICE B2B 27msc</option>
-            <option value="Orange_Oferta_dla_Firm_251057$MOB_CPO_7318_5726_AC_251057">M VOICE B2B 27msc</option>
-            <option value="Orange_Oferta_dla_Firm_251058$MOB_CPO_7318_5726_AC_251058">L VOICE B2B 27msc</option>
-            <option value="Orange_Oferta_dla_Firm_251059$MOB_CPO_7318_5726_AC_251059">XL VOICE B2B 27msc</option>
-            <option value="Orange_Oferta_dla_Firm_249811$MOB_CPO_7291_5726_AC_249811">S VOICE B2B 36msc</option>
-            <option value="Orange_Oferta_dla_Firm_249814$MOB_CPO_7291_5726_AC_249814">M VOICE B2B 36msc</option>
-            <option value="Orange_Oferta_dla_Firm_249817$MOB_CPO_7291_5726_AC_249817">L VOICE B2B 36msc</option>
-            <option value="Orange_Oferta_dla_Firm_249820$MOB_CPO_7291_5726_AC_249820">XL VOICE B2B 36msc</option>
-            <option value="Internet_Mobilny_dla_Firm_247723$MOB_CPO_6091_5706_AC_247723">DATA</option>
-            <option value="Internet_Mobilny_dla_Firm_247756$MOB_CPO_6091_5706_AC_247756">DATA XL</option>
-            <option value="Internet_Mobilny_dla_Firm_247774$MOB_CPO_6091_5706_AC_247774">DATA XXL</option>
-            <option value="Int_dla_Firm_Biurowy_Haiti_257491$MOB_CPO_7926_5745_AC_257491">Internet Biurowy</option>
-            <option value="Int_dla_Firm_Biurowy_Haiti_257492$MOB_CPO_7926_5745_AC_257492">Internet Biurowy 5G</option>
-            <option value="Int_dla_Firm_Biurowy_Haiti_257493$MOB_CPO_7926_5745_AC_257493">Internet Biurowy 5G Prymium</option>
-            <option value="TANTO_B2B_249410$MOB_CPO_7050_5722_AC_249410">SIMFREE</option>
-            <option value="DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS">SIMFREE - BEZ RAT (AKCESORIA)</option>
-            <option value="Abonament_komorkowy_257214$MOB_CPO_7731_5733_AC_257214">PLAN 40 B2C</option>
-            <option value="Abonament_komorkowy_257215$MOB_CPO_7731_5733_AC_257215">PLAN 50 B2C</option>
-            <option value="Abonament_komorkowy_257216$MOB_CPO_7731_5733_AC_257216">PLAN 60 B2C</option>
-            <option value="Abonament_komorkowy_257217$MOB_CPO_7731_5733_AC_257217">PLAN 80 B2C</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249810$MOB_CPO_7291_5726_AC_249810">S VOICE B2B 24msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249813$MOB_CPO_7291_5726_AC_249813">M VOICE B2B 24msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249816$MOB_CPO_7291_5726_AC_249816">L VOICE B2B 24msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249819$MOB_CPO_7291_5726_AC_249819">XL VOICE B2B 24msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_251056$MOB_CPO_7318_5726_AC_251056">S VOICE B2B 27msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_251057$MOB_CPO_7318_5726_AC_251057">M VOICE B2B 27msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_251058$MOB_CPO_7318_5726_AC_251058">L VOICE B2B 27msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_251059$MOB_CPO_7318_5726_AC_251059">XL VOICE B2B 27msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249811$MOB_CPO_7291_5726_AC_249811">S VOICE B2B 36msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249814$MOB_CPO_7291_5726_AC_249814">M VOICE B2B 36msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249817$MOB_CPO_7291_5726_AC_249817">L VOICE B2B 36msc</option>
+            <option data-omnio-market-type=B2B value="Orange_Oferta_dla_Firm_249820$MOB_CPO_7291_5726_AC_249820">XL VOICE B2B 36msc</option>
+            <option data-omnio-market-type=B2B value="Internet_Mobilny_dla_Firm_247723$MOB_CPO_6091_5706_AC_247723">DATA</option>
+            <option data-omnio-market-type=B2B value="Internet_Mobilny_dla_Firm_247756$MOB_CPO_6091_5706_AC_247756">DATA XL</option>
+            <option data-omnio-market-type=B2B value="Internet_Mobilny_dla_Firm_247774$MOB_CPO_6091_5706_AC_247774">DATA XXL</option>
+            <option data-omnio-market-type=B2B value="Int_dla_Firm_Biurowy_Haiti_257491$MOB_CPO_7926_5745_AC_257491">Internet Biurowy</option>
+            <option data-omnio-market-type=B2B value="Int_dla_Firm_Biurowy_Haiti_257492$MOB_CPO_7926_5745_AC_257492">Internet Biurowy 5G</option>
+            <option data-omnio-market-type=B2B value="Int_dla_Firm_Biurowy_Haiti_257493$MOB_CPO_7926_5745_AC_257493">Internet Biurowy 5G Prymium</option>
+            <option data-omnio-market-type=B2B value="TANTO_B2B_249410$MOB_CPO_7050_5722_AC_249410">SIMFREE</option>
+            <option data-omnio-market-type=B2B value="DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS">SIMFREE - BEZ RAT (AKCESORIA)</option>
+            <option data-omnio-market-type=B2C value="Abonament_komorkowy_257214$MOB_CPO_7731_5733_AC_257214">PLAN 40 B2C</option>
+            <option data-omnio-market-type=B2C value="Abonament_komorkowy_257215$MOB_CPO_7731_5733_AC_257215">PLAN 50 B2C</option>
+            <option data-omnio-market-type=B2C value="Abonament_komorkowy_257216$MOB_CPO_7731_5733_AC_257216">PLAN 60 B2C</option>
+            <option data-omnio-market-type=B2C value="Abonament_komorkowy_257217$MOB_CPO_7731_5733_AC_257217">PLAN 80 B2C</option>
+            <option data-omnio-market-type=B2C value="Internet_Mobilny_Podstawowy_247573$MOB_CPO_6031_5701_AC_247573">Internet Mobilny Podstawowy B2C</option>
+            <option data-omnio-market-type=B2C value="Internet_Mobilny_Optymalny_247574$MOB_CPO_6031_5702_AC_247574">Internet Mobilny Optymalny B2C</option>
+            <option data-omnio-market-type=B2C value="Internet_Domowy_4G_249150$MOB_CPO_6967_5703_AC_249150">Internet Domowy 4G B2C</option>
+            <option data-omnio-market-type=B2C value="P_Olove_COROT_2U_STANDARD_24M_ACTIVATION_MOBILE_257270$MOB_CPO_7791_5715_AC_257270">Orange Love Mini B2C</option>
+            <option data-omnio-market-type=B2C value="P_Olove_COROT_4U_STANDARD_24M_ACTIVATION_MOBILE_257278$MOB_CPO_7794_5715_AC_257278">Orange Love Standard B2C</option>
+            <option data-omnio-market-type=B2C value="P_Olove_COROT_4U_EXTRA_ACTIVATION_MOBILE_257285$MOB_CPO_7797_5715_AC_257285">Orange Love Extra B2C</option>
+            <option data-omnio-market-type=B2C value="P_Olove_COROT_4U_PREMIUM_ACTIVATION_MOBILE_257288$MOB_CPO_7800_5715_AC_257288">Orange Love Prymium B2C</option>
           </select>
           <label for="Producer">Producent</label>
           <select onchange="" class="form-control" id="Producer">

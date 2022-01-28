@@ -76,9 +76,9 @@ $adminArray=array( // ID użytkowników Telegrama, którzy powinni mieć uprawni
 "111111111"   #Przykład 2
 );
 
-$logChannelID='-1001661365587'; // ID kanału do logów
+$logChannelID='-xxxxxxxxx'; // ID kanału do logów
 
-$botUsername='omnio_testing_bot'; // Nazwa użytkownika bota
+$botUsername='xxxxxxxxxxxx_bot'; // Nazwa użytkownika bota
 
 $endpoint="https://example.com/"; // URL aplikacji
 ```
