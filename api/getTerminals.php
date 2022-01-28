@@ -90,25 +90,32 @@ class SearchPayload
         $this->process = "ACTIVATION";
     }
 
-    public function setSortModeRecommendedDesc(){
+    public function setSortModeRecommendedDesc()
+    {
         $this->sortMode = "recommendedDesc";
     }
-    public function setSortModeDateDesc(){
+    public function setSortModeDateDesc()
+    {
         $this->sortMode = "dateDesc";
     }
-    public function setSortModeDateAsc(){
+    public function setSortModeDateAsc()
+    {
         $this->sortMode = "dateAsc";
     }
-    public function setSortModeNameAsc(){
+    public function setSortModeNameAsc()
+    {
         $this->sortMode = "nameAsc";
     }
-    public function setSortModeNameDesc(){
+    public function setSortModeNameDesc()
+    {
         $this->sortMode = "nameDesc";
     }
-    public function setSortModePriceInOfferAsc(){
+    public function setSortModePriceInOfferAsc()
+    {
         $this->sortMode = "priceInOfferAsc";
     }
-    public function setSortModePriceInOfferDesc(){
+    public function setSortModePriceInOfferDesc()
+    {
         $this->sortMode = "priceInOfferDesc";
     }
 
@@ -173,7 +180,7 @@ class ApiCredentials
     }
 
     function getCredentialsFromRemote()
-    { 
+    {
         $this->token = fopen("https://www.orange.pl/hapi/pwa/v1/offerSelector/getToken", 'r');
         $this->token = fgets($this->token);
         foreach ($http_response_header as $hdr) {
@@ -189,7 +196,12 @@ class ApiCredentials
 
 $searchPayload = new SearchPayload();
 
-$terminal = json_decode($_GET['data']);
+
+$terminal = json_decode(
+    isset($_GET['data']) ?
+        $_GET['data'] :
+        '{"producer":"","offerType":"Orange_Oferta_dla_Firm_249810$MOB_CPO_7291_5726_AC_249810","category":"Phones and Devices","search":"alcatel","piecgie":false,"esim":false,"outlet":false,"preorder":false,"priceFilter":false,"priceFrom":"","priceTo":"","sortMode":"recommendedDesc","loyalty":24,"onlyAvailable":true,"checkPickup":false}'
+);
 
 $searchPayload->setFromInputData($terminal);
 
